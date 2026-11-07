@@ -14,5 +14,6 @@ RUN pip install cryptography uvloop
 COPY --from=builder /src/tproxy-server /usr/local/bin/tproxy-server
 
 COPY run.sh /run.sh
+RUN sed -i 's/\r$//' /run.sh
 RUN chmod +x /run.sh
 CMD ["/run.sh"]
