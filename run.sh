@@ -34,4 +34,4 @@ cat <<EOF > /config.json
 EOF
 
 # 4. Запуск прокси
-exec tproxy-server -c /config.json
+exec tproxy-server -config /config.json
