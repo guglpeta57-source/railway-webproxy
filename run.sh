@@ -1,4 +1,5 @@
 # Собираем Go-релей (фронтенд)
+#!/bin/bash
 FROM golang:1.21-alpine AS builder
 RUN apk add --no-cache git
 RUN git clone https://github.com/telegramdesktop/tproxy-server.git /src
