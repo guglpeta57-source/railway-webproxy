@@ -1,6 +1,6 @@
 # Собираем Go-релей (фронтенд)
 FROM golang:1.21-bookworm AS builder
-RUN apk add --no-cache git
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 RUN git clone https://github.com/telegramdesktop/tproxy-server.git /src
 WORKDIR /src
 RUN go build -o tproxy-server ./cmd/tproxy-server
